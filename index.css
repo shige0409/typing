@@ -13,3 +13,11 @@ body {
 .info {
   color: #777;
 }
+
+.good {
+  color: #ddd;
+}
+
+.bad {
+  color: #222;
+}

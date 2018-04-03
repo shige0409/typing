@@ -34,7 +34,6 @@
     score = 0;
     miss = 0;
     timer = 100;
-    target.innerHTML = currentWord;
     scoreLabel.textContent = score;
     missLabel.textContent = miss;
     timerLabel.textContent = timer;
@@ -43,9 +42,14 @@
   init();
 
   function setTarget() {
-    currentWord = words[Math.floor(Math.random() * words.length )];
-    target.textContent = currentWord;
+    target.innerHTML = '';
     currentLocation = 0;
+    currentWord = words[Math.floor(Math.random() * words.length )];
+    for (let i = 0; i < currentWord.length; i++) {
+      let span = document.createElement('span');
+      span.textContent = currentWord[i];
+      target.appendChild(span);
+    }
   }
 
   function startTimer() {
@@ -65,17 +69,13 @@
     setTarget();
     startTimer();
   });
+
   window.addEventListener('keydown', function(e){
     if(e.shiftKey){
       e.preventDefault();
     }
     if (e.key === currentWord[currentLocation]) {
-      currentLocation++;
-      var placeholder = '';
-      for(var i = 0; i < currentLocation; i++){
-        placeholder += '_';
-      }
-      target.textContent = placeholder + currentWord.substring(currentLocation);
+      target.childNodes[currentLocation++].classList.add('good');
       scoreLabel.textContent = ++score;
       if (currentLocation === currentWord.length) {
         setTarget();
