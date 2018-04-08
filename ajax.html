@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AJAX</title>
+  </head>
+  <body>
+    <input type="text" id="lang" value="Result....">
+    <input type="submit" value="submit" onclick="test();">
+    <p id="result"></p>
+
+    <script type="text/javascript">
+      function test(){
+      let xml = new XMLHttpRequest();
+      let lang = document.getElementById('lang');
+      xml.onreadystatechange = function(){
+        if(xml.readyState === 4){
+          document.getElementById('result').textContent = xml.responseText;
+        }
+      };
+
+      xml.open('GET', `ajax.php?lang=${lang.value}`, true);
+      xml.send();
+    }
+    </script>
+  </body>
+</html>

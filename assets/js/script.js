@@ -1,28 +1,14 @@
 (function(){
   'use strict';
 
-  var words = [
-    `puts('hello')`,
-    `class Person{}`,
-    'python',
-    'go',
-    'a pple',
-    'html',
-    'css',
-    'javascript',
-    'php',
-    'ruby',
-    'node',
-    'react',
-    'angular',
-    'ember'
-  ];
   var currentWord ;
+  var wordIntro ;
   var currentLocation ;
   var score ;
   var miss ;
   var timer;
   var target = document.getElementById('target');
+  var intro = document.getElementById('intro');
   var scoreLabel = document.getElementById('score');
   var missLabel = document.getElementById('miss');
   var timerLabel = document.getElementById('timer');
@@ -44,7 +30,10 @@
   function setTarget() {
     target.innerHTML = '';
     currentLocation = 0;
-    currentWord = words[Math.floor(Math.random() * words.length )];
+    let wordArray = words[Math.floor(Math.random() * words.length )]
+    currentWord = wordArray[0];
+    wordIntro = wordArray[1];
+    intro.textContent = wordIntro;
     for (let i = 0; i < currentWord.length; i++) {
       let span = document.createElement('span');
       span.textContent = currentWord[i];
@@ -65,7 +54,7 @@
     }, 1000);
   }
 
-  window.addEventListener('click', function(){
+  target.addEventListener('click', function(){
     setTarget();
     startTimer();
   });

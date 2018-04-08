@@ -1,24 +1,88 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="エンジニア向けのタイピングサービスです
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="エンジニア向けのタイピングサービスです
     C言語,Java,HTML,CSS,Javascript,PHP,Ruby,Python,Swift,jQuery,Rails様々な言語や
     フレームワークに対応しています">
-    <meta name="author" name="k.goto">
-    <title>タイピングサービス - エンジニア向け</title>
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-    <p id ="target">
-    </p>
-    <p class="info">
-      Letters count: <span id="score">0</span>
-      Miss count: <span id="miss">0</span>
-      Time: <span id="timer"></span>
-    </p>
-    <script type="text/javascript" src="script.js"></script>
-  </body>
+  <meta name="author" name="k.goto">
+  <title>タイピングサービス - エンジニア向け</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+</head>
+
+<body>
+  <div class="bg-clear">
+    <header>
+      <nav>
+        <ul class="flex-box right-align header-lists">
+          <li><a href="#/home">mimg</a></li>
+          <li><a href="#/index">コンテンツ一覧</a></li>
+          <li><a href="#/help">ヘルプ</a></li>
+          <li><a href="#/contact">お問い合わせ</a></li>
+          <li><a href="#/login">ログイン</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <main class="main" id="main-page">
+        <div class="main-title" id="home">
+          <h1>エンジニア向けタイピングサービス</h1>
+          <p>HTML,CSS,Javascriptなど様々な言語に対応しています。</p>
+        </div>
+        <div class="hide" id="help">
+          <p>Help</p>
+        </div>
+        <div class="hide" id="contact">
+          <p>contact</p>
+        </div>
+        <div class="hide contents" id="index">
+          <div class="lang">
+            <a href="#/typing/html">HTML</a>
+          </div>
+          <div class="lang">
+            <a href="#/typing/css">CSS</a>
+          </div>
+          <div class="lang">
+            <a href="#/typing/js">Javascript</a>
+          </div>
+          <div class="lang">
+            <a href="#/typing/php">PHP</a>
+          </div>
+          <div class="lang">
+            <a href="#/typing/ruby">Ruby</a>
+          </div>
+          <div class="lang">
+            <a href="#/typing/python">Python</a>
+          </div>
+          <div class="lang">
+            <a href="#/typing/rails">Rails</a>
+          </div>
+          <div class="lang">
+            <a href="#/typing/linux">Linuxコマンド</a>
+          </div>
+          <div class="lang">
+            <a href="#/typing/git">Git</a>
+          </div>
+        </div>
+        <div class="typing hide" id="typing">
+          <p id ="target">start</p>
+          <p id="intro"></p>
+          <p class="info">
+            Letters count: <span id="score">0</span>
+            Miss count: <span id="miss">0</span>
+            Time: <span id="timer"></span>
+          </p>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script type="text/javascript" src="assets/js/routes.js"></script>
+  <script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+
 </html>

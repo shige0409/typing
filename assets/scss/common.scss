@@ -1,0 +1,46 @@
+@import 'colors';
+
+.bg-clear {
+  background:
+    linear-gradient(to top, rgba(255,255,255,0.5), rgba(0, 0, 255, 0.5)),
+    url(../images/programing.png);
+  background-size: 100% 100%;
+}
+
+.flex-box {
+  display: flex;
+}
+
+.right-align {
+  justify-content: flex-end;
+}
+
+.container {
+  margin: 0 auto;
+  height: 640px;
+}
+
+#target {
+  font-size: 40px;
+  letter-spacing: 3px;
+}
+
+.info {
+  margin-top: 40px;
+}
+
+.good {
+  color: #777;
+}
+
+.bad {
+  color: #222;
+}
+.hide {
+  display: none;
+}
+.typing {
+  width: 100%;
+  font-size: 40px;
+  text-align: center;
+}
