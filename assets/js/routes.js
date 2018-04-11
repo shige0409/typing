@@ -1,7 +1,8 @@
+// let lang = new Language('html');
 var words = [];
+
 window.addEventListener('hashchange', function() {
   let urls = location.hash.split('/');
-  //console.log(urls);
   let mainPage = document.getElementById('main-page');
   let mainChildren = mainPage.children;
   for (let child of mainChildren) {
@@ -20,72 +21,12 @@ window.addEventListener('hashchange', function() {
 false);
 
 function getWords(url) {
-switch (url) {
-  case 'html':
-    return [
-      [
-        '<html><html>', 'HTMLタグ'
-      ],
-      [
-        '<head></head>', 'headタグ'
-      ],
-      [
-        '<header></header>', 'headerタグ'
-      ],
-      [
-        '<body></body>', 'bodyタグ'
-      ],
-      [
-        '<footer></footer>', 'footerタグ'
-      ]
-    ];
-    break;
-  case 'css':
-    return [
-      [
-        'color: #fff', '文字の色を白に'
-      ],
-      [
-        'background-color: gray', '背景をグレイに'
-      ],
-      [
-        'border: 1px solid red', '1pxの赤い枠線を引く'
-      ]
-    ];
-    break;
-  case 'js':
-    return [
-      [
-        'console.log(name)', '変数nameをコンソールに出力'
-      ],
-      [
-        'document.getElementById(id)', 'idを指定してDOMを得る'
-      ],
-      [
-        'const TAX = 1.08', '定数TAXに1.08を代入'
-      ]
-    ];
-    break;
-  case 'php':
-    words = {};
-    break;
-  case 'ruby':
-    words = {};
-    break;
-  case 'python':
-    words = {};
-    break;
-  case 'rails':
-    words = {};
-    break;
-  case 'linux':
-    words = {};
-    break;
-  case 'git':
-    words = {};
-    break;
-  default:
-    return [];
-    break;
-}
+  let xml = new XMLHttpRequest();
+  xml.onreadystatechange = function(){
+    if(xml.readyState === 4 && xml.status === 200) {
+      words = JSON.parse(xml.responseText);
+    }
+  }
+  xml.open('GET', `./wordsJson/${url}.json`);
+  xml.send();
 }
