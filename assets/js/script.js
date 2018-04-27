@@ -30,7 +30,7 @@
   function setTarget() {
     target.innerHTML = '';
     currentLocation = 0;
-    let wordArray = words[Math.floor(Math.random() * Object.keys(words).length )];
+    let wordArray = words[Math.floor(Math.random() * Object.keys(words).length)];
     currentWord = wordArray[0];
     wordIntro = wordArray[1];
     intro.textContent = wordIntro;

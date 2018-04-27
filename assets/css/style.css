@@ -1,3 +1,6 @@
+/*@mixin before() {
+
+}*/
 .bg-clear {
   background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(0, 0, 255, 0.5)), url(../images/programing.png);
   background-size: 100% 100%; }
@@ -45,8 +48,7 @@
     margin-left: 20px; }
     .header-lists li a {
       padding: 15px;
-      transition: 0.6s;
-      border-bottom: 1px solid #fff; }
+      transition: 0.6s; }
     .header-lists li:hover a {
       background-color: #fff;
       color: blue;
@@ -59,8 +61,17 @@
   .main-title h1 {
     font-size: 40px; }
   .main-title p {
-    margin-top: 50px;
+    margin: 50px 0 100px 0;
     font-size: 20px; }
+  .main-title a {
+    font-size: 1.5em;
+    padding: 15px;
+    transition: 0.6s;
+    border: #fff solid 1px; }
+    .main-title a:hover {
+      background-color: #fff;
+      color: blue;
+      border-radius: 20px; }
 
 .contents {
   justify-content: space-between;

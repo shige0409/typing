@@ -14,7 +14,6 @@
     a {
       padding: 15px;
       transition: 0.6s;
-      border-bottom: 1px solid #fff;
     }
     &:hover a {
       background-color: #fff;
@@ -32,8 +31,19 @@
     font-size: 40px;
   }
   p {
-    margin-top: 50px;
+    margin: 50px 0 100px 0;
     font-size: 20px;
+  }
+  a {
+    font-size: 1.5em;
+    padding: 15px;
+    transition: 0.6s;
+    border: #fff solid 1px;
+    &:hover {
+      background-color: #fff;
+      color: blue;
+      border-radius: 20px;
+    }
   }
 }
 

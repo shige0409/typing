@@ -1,3 +1,6 @@
+/*@mixin before() {
+
+}*/
 .bg-clear {
   background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(0, 0, 255, 0.5)), url(../images/programing.png);
   background-size: 100% 100%; }
