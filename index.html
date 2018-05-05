@@ -12,9 +12,13 @@
   <title>タイピングサービス - エンジニア向け</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/reset.css">
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+  -->
 </head>
 
-<body>
+<body onload="initial();">
   <div class="bg-clear">
     <header>
       <nav>
@@ -31,6 +35,12 @@
     <div class="container">
       <main class="main" id="main-page">
         <div class="main-title" id="home">
+          <!--
+          <div id="msg">
+            <p>{{message}}</p>
+            <input type="text" v-model="message">
+          </div>
+          -->
           <h1>エンジニア向けタイピングサービス</h1>
           <p>HTML,CSS,Javascriptなど様々な言語に対応しています。</p>
           <a href="#/signup">新規登録</a>
